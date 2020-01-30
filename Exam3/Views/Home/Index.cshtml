@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <h3>Products:</h3>
+
+    <table style="background-color:#cf974f; color:#5c082b" class="table">
+        <tr class="header">
+            <td><p>Name</p></td>
+            <td><p>Price</p></td>
+            <td><p>Count</p></td>
+        <tr>
+            @foreach (var t in ViewBag.Tovars)
+            {
+
+            <tr>
+                <td><p>@t.Name</p></td>
+                <td><p>@t.Price</p></td>
+                <td><p>@t.Count</p></td>
+                <td><p><a class="btn btn-primary" href="/Edit/Edit/@t.Id">Edit</a></p></td>
+                <td><p><a class="btn btn-danger" href="/Edit/Delete/@t.Id">Delete</a></p></td>
+
+            </tr>
+
+            
+        }
+
+        </table>
+   <p><a class="btn btn-success" href="/Edit/Add">Add</a></p>
+
+    </div>
